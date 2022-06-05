@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&family=Roboto+Slab:wght@300;500;700;800;900&display=swap');
+
+html {
+    width: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+    padding: 65px 120px;
+    padding: 65px calc(120px - 100vw + 100%) 65px 120px;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    background: #EEEEF1;
+}
+
+body {
+    flex-grow: 1;
+}
+
+.header {
+    height: 70px;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    border-radius: 30px 30px 0 0;
+    background: #fff;
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background:rgb(187, 151, 220) url("/public/img/rocket.png") no-repeat;
+    background-size: 35px 35px;
+    text-indent: -10000px;
+}
+
+.searchForm {
+    flex-grow: 1;
+    max-width: 430px;
+    min-width: 200px;
+    margin: 0 auto 0 5px;
+}
+
+.search {
+    box-sizing: border-box;
+    height: 35px;
+    width: 100%;
+    padding: 0 0 0 45px;
+    border-radius: 20px;
+    border: none;
+    background: #F2F4F4 url("/public/img/icon-lupa.png") no-repeat 15px 50%;
+    background-size: 15px 15px;
+    font-size: 12px;
+}
+
+.navigation {
+    display: flex;
+    margin: 0 0 0 25px;
+}
+
+.navItem {
+    margin: 0 12px 0 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: gray;
+}
+
+.navItem:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.create {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 35px;
+    margin: 0 0 0 23px;
+    color: black;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 150ms;
+}
+
+.create:hover {
+    color: white;
+}
+
+.create::before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #871dea;
+    top: -1px;
+    right: -1px;
+    left: -1px;
+    bottom: -1px;
+    border-radius: inherit;
+    opacity: 0;
+    transition: inherit;
+}
+
+.create:hover::before {
+    opacity: 1;
+}
+
+.wallet {
+    flex-shrink: 0;
+    position: relative;
+    display: block;
+    width: 15px;
+    height: 15px;
+    margin: 0 15px;
+    opacity: 1;
+    background: url("/public/img/wallet.png") no-repeat 50% 50%;
+    background-size: 15px 15px;
+    text-indent: -10000px;
+}
+
+.wallet:hover::before {
+    opacity: 1;
+}
+
+.wallet::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -17.5px 0 0 -17.5px;;
+    display: block;
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    border: 1px solid rgb(184, 182, 182);
+    border-radius: 50%;
+    transition: 200ms;
+    opacity: 0;
+}
+
+.profileLink {
+    flex-shrink: 0;
+    display: block;
+}
+
+.avatar {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.main {
+    background: #fff;
+    padding: 0 70px;
+    border-radius: 0 0 30px 30px;
+}
+
+.headerExplore {
+    margin: 40px 0 20px 0;
+}
+
+.filterBar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.buttonBar {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 65px;
+    padding: 0 15px;
+    margin: 0 5px 0 0;
+    height: 30px;
+    border: none;
+    border: 1px solid hsla(0, 2%, 77%, 0.889);
+    border-radius: 20px;
+    background-color: white;
+    font-size: 12px;  
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.buttonBar:hover {
+    border-color: #d6bfec;
+    color: #871dea;
+    background-color: #d6bfec;
+}
+
+.filterRadio {
+    position: absolute;
+    left: -10000px;
+}
+
+.filterRadio:checked + .buttonBar {
+    border-color: #d6bfec;
+    color: #871dea;
+    background-color: #d6bfec;  
+}
+
+.sortBar {
+    margin: 0 0 0 auto;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    margin: 0 5px 0 auto;
+}
+
+.filter::before {
+    display: block;
+    content: "";
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 0;
+    background: url("/public/img/filter.png");
+    background-size: 100% 100%;
+}
+
+.sort {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.sort::before {
+    display: block;
+    content: "";
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px 0 0;
+    background: url("/public/img/sort.png");
+    background-size: 100% 100%;
+}
+
+.tokensSale {
+    margin: 30px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tokensSale::after {
+    position: relative;
+    display: block;
+    content: "";
+    flex-grow: 1;
+}
+
+.tokens {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    max-width: 260px;
+    min-width: 150px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.tokenImg {
+    display: block;
+    order: -1;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tokenName {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+    text-decoration: none;
+    color: black;
+}
+
+.tokenName::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.tokenConditions {
+    display: flex;
+    align-items: center;
+}
+
+.tokenConditions::after {
+    order: -1;
+    position: relative;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 20px;
+    margin: 0 15px;
+    background: gray;
+}
+
+.tokenItemBuy {
+    z-index: 1;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    cursor: pointer;
+}
+
+.tokenItemBuy:first-child {
+    order: -2;
+}
+
+.auction {
+    font-size: 9px;
+    color: rgb(155, 153, 153);
+    font-weight: 600;
+}
+
+.price {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px 0 0;
+}
+
+.seller {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    margin: 25px 0 0 0;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+}
+
+.sellerAvatar {
+    margin: 0 10px 0 0;
+    border-radius: 50%;
+}
+
+.countLikes {
+    z-index: 2;
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+    display: flex;
+    border: none;
+    background: none;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.countLikes::before {
+    display: block;
+    content: "";
+    position: relative;
+    width: 12px;
+    height: 12px;
+    margin: 0 3px 0 0;
+    background: url("/public/img/like.png");
+    background-size: 100% 100%;
+}
